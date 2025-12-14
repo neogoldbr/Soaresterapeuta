@@ -1,31 +1,3 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>HPA RESET® | Terapeuta Soares · Saúde de Verdade</title>
-  <meta name="description" content="HPA RESET®: reorganização do eixo HPA em 3 semanas. Teste rápido (7 perguntas) indica o nível ideal de acompanhamento." />
-  <meta name="robots" content="index,follow" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-  <!-- [ESTILO MANTIDO – SEM ALTERAÇÕES] -->
-  <!-- TODO O CSS ORIGINAL FOI PRESERVADO -->
-  <!-- (omiti aqui para não duplicar – mantenha o mesmo CSS que você enviou) -->
-</head>
-
-<body>
-
-<script>
-  const WHATSAPP = "https://wa.me/5598981653105";
-  const INSTAGRAM = "https://www.instagram.com/soares.saudedeverdade";
-</script>
-
-<!-- TODO O HTML VISUAL FOI MANTIDO IGUAL AO SEU -->
-<!-- ... -->
-
 <script>
   function getVal(name){
     const el = document.querySelector(`input[name="${name}"]:checked`);
@@ -37,7 +9,7 @@
     for(let i=1;i<=7;i++){
       const v = getVal("q"+i);
       if(v === null){
-        alert("Responda as 7 perguntas para ver o resultado.");
+        alert("Responda todas as perguntas com sinceridade.");
         return;
       }
       score += v;
@@ -45,104 +17,96 @@
 
     let plano = "";
     let titulo = "";
-    let explicacao = "";
-    let porqueNinguemResolve = "";
-    let porqueMetodo = "";
+    let texto = "";
 
     if(score <= 4){
       plano = "Essencial";
-      titulo = "Seu corpo ainda funciona. Mas está funcionando no limite.";
-      explicacao = `
-        Pelas suas respostas, seu corpo não está quebrado.
-        Ele ainda entrega, ainda responde, ainda aguenta.
-        <br><br>
-        O problema é que ele está fazendo isso <strong>em modo de alerta constante</strong>.
-        Você até descansa, mas não recupera.
-        Até tenta relaxar, mas o corpo não acompanha.
-      `;
-      porqueNinguemResolve = `
-        Isso geralmente não aparece em exames simples.
-        Por fora, parece que “está tudo bem”.
-        Por dentro, o sistema nunca desliga.
-      `;
-      porqueMetodo = `
-        O protocolo Essencial reorganiza o eixo do estresse
-        antes que esse limite vire colapso.
-        É intervenção no momento certo.
-      `;
-    } 
-    else if(score <= 9){
-      plano = "Acompanhado";
-      titulo = "Seu corpo não está fraco. Ele está cansado de lutar sozinho.";
-      explicacao = `
-        Seu corpo tenta melhorar, mas não consegue sustentar.
-        Você começa bem, sente esperança, e depois tudo escapa de novo.
-        <br><br>
-        Isso não é falta de força.
-        É falta de <strong>regulação contínua</strong>.
-      `;
-      porqueNinguemResolve = `
-        A maioria das abordagens age no pensamento,
-        mas ignora o corpo em alerta.
-        Sem correção frequente, o sistema volta ao padrão antigo.
-      `;
-      porqueMetodo = `
-        O acompanhamento 3x por semana impede recaídas silenciosas
-        e mantém o eixo em reorganização real.
-      `;
-    } 
-    else {
-      plano = "Intensivo";
-      titulo = "Seu corpo está pedindo ajuda agora.";
-      explicacao = `
-        Aqui não é mais cansaço comum.
-        É um corpo que vive em sobrevivência.
-        <br><br>
-        Tensão constante, mente em hiperalerta,
-        sensação de que não pode falhar.
-      `;
-      porqueNinguemResolve = `
-        Quando o eixo fica desregulado por muito tempo,
-        força de vontade não resolve.
-        E esperar piorar cobra um preço alto.
-      `;
-      porqueMetodo = `
-        Presença diária cria segurança fisiológica.
-        Isso permite que o sistema finalmente desarme.
+      titulo = "Você não está quebrado. Mas está segurando mais do que deveria.";
+      texto = `
+        Vou ser direto com você, como um amigo seria.
+
+        Pelo que você respondeu, o seu corpo ainda está funcionando.
+        Você ainda dá conta.
+        Ainda cumpre o que precisa cumprir.
+
+        Mas isso está acontecendo **à força**.
+
+        Você descansa, mas não sente que recupera de verdade.
+        Você até tenta relaxar, mas o corpo continua tenso.
+        Parece que algo dentro de você nunca desliga completamente.
+
+        Isso não é preguiça.
+        Não é fraqueza.
+        Não é falta de pensamento positivo.
+
+        É um corpo que entrou em modo alerta e ficou tempo demais ali.
+
+        O problema é que, quando ninguém reorganiza isso,
+        o corpo continua aguentando…
+        até o dia em que não aguenta mais.
+
+        O protocolo Essencial existe exatamente para esse ponto:
+        **antes da queda**, quando ainda dá para corrigir o eixo
+        sem sofrimento maior.
       `;
     }
 
-    const box = document.getElementById("resultBox");
-    box.style.display = "block";
-    box.innerHTML = `
-      <h3 style="font-weight:900;letter-spacing:-.02em;margin-bottom:6px;">${titulo}</h3>
+    else if(score <= 9){
+      plano = "Acompanhado";
+      titulo = "Você tenta melhorar… mas algo sempre puxa você de volta.";
+      texto = `
+        O que aparece aqui não é falta de esforço.
+        Pelo contrário.
 
-      <p style="color:#334155">${explicacao}</p>
+        Você tenta.
+        Começa bem.
+        Sente que agora vai.
+        E de repente… o corpo cai de novo.
 
-      <p style="color:#475569;margin-top:8px;">
-        <strong>Por que quase ninguém entende isso:</strong><br>
-        ${porqueNinguemResolve}
-      </p>
+        Sono desregula.
+        Ansiedade volta.
+        A cabeça acelera.
+        A paciência acaba.
 
-      <p style="color:#0f172a;margin-top:8px;">
-        <strong>Por que o HPA RESET® faz sentido agora:</strong><br>
-        ${porqueMetodo}
-      </p>
+        Isso cansa mais do que estar mal o tempo todo.
+        Porque cria esperança — e depois frustração.
 
-      <div style="margin-top:14px;">
-        <a class="btn primary"
-           href="${WHATSAPP}?text=${encodeURIComponent(
-             `Olá, Soares. Fiz o teste do HPA RESET®.\n\nResultado indicou o plano ${plano}.\n\nSenti que o texto descreveu exatamente o que estou vivendo.\nQuero agendar a avaliação inicial para confirmar e iniciar o tratamento.`
-           )}"
-           target="_blank" rel="noopener">
-          Quero agendar minha avaliação
-        </a>
-      </div>
-    `;
+        A verdade é que o seu corpo não está conseguindo
+        se reorganizar sozinho.
 
-    box.scrollIntoView({behavior:"smooth", block:"start"});
-  }
-</script>
+        Não porque você não sabe o que fazer,
+        mas porque **não consegue sustentar**.
 
-</body>
-</html>
+        O acompanhamento existe por isso:
+        para você não carregar tudo sozinho,
+        não se perder no meio do caminho,
+        e não precisar recomeçar toda semana.
+      `;
+    }
+
+    else {
+      plano = "Intensivo";
+      titulo = "Seu corpo está em sobrevivência. E ele não consegue sair disso sozinho.";
+      texto = `
+        Aqui eu preciso ser muito honesto com você.
+
+        O que aparece nas suas respostas não é só cansaço.
+        É um corpo que vive em alerta.
+
+        Mesmo quando nada está acontecendo,
+        algo dentro de você continua preparado para o pior.
+
+        Tensão no peito.
+        Aperto no estômago.
+        Mente que não para.
+        Sensação de que não pode falhar.
+
+        Isso não é drama.
+        É um sistema nervoso exausto.
+
+        Nesse ponto, força de vontade não resolve.
+        Esperar melhorar sozinho costuma piorar.
+
+        O acompanhamento diário não é exagero.
+        É o que devolve segurança para o corpo
+        até ele aprender, de novo, a desliga
