@@ -98,6 +98,21 @@
     }
     .btn:hover{transform:translateY(-1px)}
 
+    .hero-meta{
+      margin-top:10px;
+      color:#64748b;
+      font-size:.92rem;
+      font-weight:600;
+    }
+    .hero-meta strong{color:#0b1220}
+    .urgency{
+      margin-top:12px;
+      background:#f7f9fe;border:1px solid var(--line);border-radius:18px;
+      padding:12px 14px;
+      color:#334155;
+    }
+    .urgency strong{color:#0b1220}
+
     /* Section cards */
     .section{
       margin-top:18px;
@@ -227,27 +242,40 @@
     </div>
   </div>
 
-  <!-- HERO -->
+  <!-- HERO (ajuste mínimo: feminino + decisão + CTA mais direto) -->
   <div class="hero fade-in delay-2" id="topo">
-    <div class="pill">PROTOCOLO INTEGRATIVO</div>
-    <h1>Quando o corpo perde o eixo, a vida pesa.</h1>
+    <div class="pill">PROTOCOLO INTEGRATIVO · 3 SEMANAS</div>
+
+    <!-- ✅ Título feminino forte -->
+    <h1>Você não está fraca.<br>Você só está cansada de aguentar tudo sozinha.</h1>
+
+    <!-- ✅ Promessa clara (sem promessa de cura) -->
     <p>
-      O <strong>HPA RESET®</strong> foi criado para pessoas exaustas que já tentaram “aguentar firme”
-      e perceberam que força de vontade não resolve desorganização do eixo do estresse.
+      Se sua mente não desliga, seu corpo vive tenso e você sente que “perdeu o eixo”,
+      o problema muitas vezes não é falta de força — é um <strong>sistema de estresse em alerta</strong>.
     </p>
     <p>
-      Aqui não tem milagre. Tem método, clareza e acompanhamento no nível certo.
-      O foco é <strong>3 semanas</strong> de reorganização com direção.
+      O <strong>HPA RESET®</strong> é um processo guiado pra reduzir ruído, reorganizar rotina e ajudar seu corpo a sair do “modo alerta”
+      com um plano diário simples e acompanhamento no nível certo.
     </p>
 
     <div class="hero-actions">
-      <a class="btn primary" href="#teste">Fazer o teste rápido</a>
+      <a class="btn primary" href="#teste">Fazer o teste em 60s</a>
       <a class="btn" href="#como">Ver como funciona</a>
-      <a class="btn" id="talkBtn" target="_blank" rel="noopener">Falar no WhatsApp</a>
+      <a class="btn" id="talkBtn" target="_blank" rel="noopener">Agendar avaliação</a>
+    </div>
+
+    <div class="hero-meta">
+      <strong>Terapeuta Soares</strong> · CRTH/ABRATH · Atendimento online · Envio de protocolo e orientações em PDF
+    </div>
+
+    <div class="urgency">
+      <strong>Um aviso de amiga:</strong> quanto mais tempo você empurra no automático,
+      mais seu corpo aprende a viver em alerta. <strong>Não espera virar crise.</strong>
     </div>
   </div>
 
-  <!-- Isso não é fraqueza -->
+  <!-- Isso não é fraqueza (mantido) -->
   <div class="section fade-in delay-2">
     <h2>Isso não é fraqueza</h2>
     <p>
@@ -260,9 +288,16 @@
       <li>Cansaço mesmo após dormir</li>
       <li>Sensação de estar sempre no limite</li>
     </ul>
+
+    <!-- ✅ Pequeno bloco de identificação (mudança mínima, alto impacto) -->
+    <div class="callout">
+      <strong>Se você é mulher e se reconheceu nisso:</strong><br>
+      você pode estar “funcionando por fora” e, por dentro, se sentindo no limite.
+      Isso não é drama. É um corpo que não conseguiu mais desligar.
+    </div>
   </div>
 
-  <!-- O que é -->
+  <!-- O que é (mantido) -->
   <div class="section fade-in delay-3" id="como">
     <h2>O que é o HPA RESET®</h2>
     <p>
@@ -277,7 +312,7 @@
     </ul>
   </div>
 
-  <!-- Eixo HPA explicação profunda -->
+  <!-- Eixo HPA (mantido) -->
   <div class="section fade-in delay-3" id="hpa">
     <h2>O eixo HPA: o que é, como funciona e por que dá problema</h2>
 
@@ -334,40 +369,40 @@
     </p>
   </div>
 
-  <!-- Planos -->
+  <!-- Planos (mantido, com micro-ajuste de linguagem feminina nas descrições) -->
   <div class="section fade-in delay-3" id="planos">
     <h2>Níveis de acompanhamento</h2>
     <div class="grid3">
       <div class="plan">
         <h3>Essencial</h3>
-        <div class="muted">Avaliação inicial + protocolo completo.</div>
+        <div class="muted">Pra quem ainda dá conta… mas sente que está no limite.</div>
         <ul>
           <li>Avaliação inicial (20 min)</li>
           <li>3 semanas de protocolo (estrutura completa)</li>
           <li>Execução simples, sem confusão</li>
-          <li>Para quem está funcional, mas no limite</li>
+          <li>Pra reorganizar antes de virar crise</li>
         </ul>
       </div>
 
       <div class="plan">
         <h3>Acompanhado</h3>
-        <div class="muted">Tudo do Essencial + acompanhamento 3x por semana.</div>
+        <div class="muted">Pra quem começa bem, mas não consegue sustentar sozinha.</div>
         <ul>
-          <li>Correções de rota ao longo da semana</li>
-          <li>Mais consistência e menos desistência</li>
-          <li>Para quem oscila e não sustenta sozinho</li>
-          <li>Orientação aplicada, não só teoria</li>
+          <li>Tudo do Essencial</li>
+          <li>Acompanhamento 3x por semana</li>
+          <li>Correções de rota (sem se culpar)</li>
+          <li>Mais consistência e menos recaída</li>
         </ul>
       </div>
 
       <div class="plan">
         <h3>Intensivo</h3>
-        <div class="muted">Acompanhamento diário (seg–sex) por 3 semanas.</div>
+        <div class="muted">Pra quem vive em alerta crônico e precisa de presença constante.</div>
         <ul>
+          <li>Acompanhamento diário (seg–sex) por 3 semanas</li>
           <li>Presença terapêutica diária</li>
           <li>Correção constante do que derruba</li>
-          <li>Para alerta crônico e exaustão alta</li>
-          <li>Mais segurança para sair do “modo sobrevivência”</li>
+          <li>Mais segurança pra sair do “modo sobrevivência”</li>
         </ul>
       </div>
     </div>
@@ -442,7 +477,7 @@
         </div>
       </div>
 
-      <button class="btn primary" type="button" onclick="calc()">Ver resultado</button>
+      <button class="btn primary" type="button" onclick="calc()">Ver meu resultado</button>
 
       <div class="result" id="resultBox"></div>
 
@@ -481,208 +516,205 @@
     return el ? Number(el.value) : null;
   }
 
-  // ✅ Resultado emocional forte (sem prometer cura, sem atacar psiquiatria)
+  // ✅ Resultado emocional forte (tom de amiga íntima, sem prometer cura, sem atacar psiquiatria)
   function calc(){
     let score = 0;
+    const respostas = {};
     for(let i=1;i<=7;i++){
       const v = getVal("q"+i);
       if(v === null){
         alert("Responda as 7 perguntas para ver o resultado.");
         return;
       }
+      respostas["q"+i] = v;
       score += v; // 0..14
     }
 
-    // Intensidade (linguagem humana)
-    const intensidadeTxt =
-      score <= 4 ? "um alerta leve, mas constante"
-      : score <= 9 ? "um alerta moderado, com oscilações"
-      : "um alerta alto, do tipo que rouba energia e paz";
+    // intensidade textual
+    const intensidade =
+      score <= 4 ? "leve/moderada" :
+      score <= 9 ? "moderada/alta" :
+      "alta";
 
-    // Plano + narrativa
+    // mapas de “frases de verdade” (puxa honestidade)
+    const puxaHonestidade = [];
+    if(respostas.q1 >= 1) puxaHonestidade.push("sono que não aprofunda");
+    if(respostas.q4 >= 1) puxaHonestidade.push("mente que demora pra desligar");
+    if(respostas.q5 >= 1) puxaHonestidade.push("corpo que fica em tensão sem perceber");
+    if(respostas.q3 >= 1) puxaHonestidade.push("energia que não volta mesmo dormindo");
+    if(respostas.q6 >= 1) puxaHonestidade.push("emoção que oscila e depois vem culpa");
+    if(respostas.q7 >= 1) puxaHonestidade.push("dificuldade de manter constância");
+
+    const verdadeCurta = puxaHonestidade.length
+      ? puxaHonestidade.slice(0,3).join(", ")
+      : "um cansaço que pesa e uma mente que insiste em ficar ligada";
+
     let plano = "";
-    let headline = "";
-    let carinho = "";
-    let corpo = "";
-    let invisivel = "";
-    let sentidoPlano = "";
+    let titulo = "";
+    let abertura = "";
+    let oQueIssoSignifica = "";
+    let porQueNinguemEntende = "";
+    let porQuePlanoAgora = "";
     let proximoPasso = "";
     let tomMsg = "";
 
-    // “Âncoras” emocionais (pra soar íntimo e preciso)
-    const ancoras = {
-      radar: "como se sua mente virasse um radar 24h procurando problema",
-      peso: "uma sensação de peso no peito, no estômago ou nos ombros — mesmo quando ‘não aconteceu nada’",
-      culpa: "e ainda vem aquela culpa depois: ‘por que eu não consigo ser como antes?’",
-      curto: "você melhora um pouco… e depois o corpo puxa você de volta",
-      trava: "o corpo até deita, mas não ‘desarma’"
-    };
-
     if(score <= 4){
       plano = "Essencial";
-      headline = "Você não é fraca. Você só está cansada de viver no ‘quase dando conta’.";
-      carinho = `
-        Vou falar como eu falaria com alguém próximo:
+      titulo = "Você não está quebrada. Você só está sustentando mais do que deveria.";
+      abertura = `
+        Vou falar com você como eu falaria com uma amiga:
         <br><br>
-        <strong>você funciona</strong>. Você entrega. Você resolve.
-        Só que por dentro, tem um pedaço de você que está sempre “em prontidão”.
-        ${ancoras.trava}.
+        Você <strong>dá conta</strong>. Você funciona. Você entrega.
+        Só que você está pagando por isso com <strong>${verdadeCurta}</strong>.
       `;
-      corpo = `
-        Pelas suas respostas, seu eixo HPA está em <strong>${intensidadeTxt}</strong>.
+      oQueIssoSignifica = `
+        Pelas suas respostas, seu eixo do estresse (HPA) está em <strong>alerta ${intensidade}</strong>.
+        Isso significa que o seu corpo anda “ligado” mesmo quando você tenta descansar.
         <br><br>
-        É como dirigir com o pé encostado no acelerador o dia inteiro.
-        Você chega no fim do dia e pensa: “eu não fiz tanta coisa assim… por que eu tô exausta?”
-        <br><br>
-        Aí vem o sono leve, a mente ligada, a irritação fora do seu normal, e ${ancoras.culpa}.
+        É aquele tipo de cansaço que não é preguiça.
+        É um cansaço de <strong>viver por dentro como se tivesse sempre algo pra resolver</strong>.
       `;
-      invisivel = `
-        O que pega é que isso fica “invisível” pra quem olha de fora.
-        Por fora você parece ok.
-        Por dentro, ${ancoras.radar}.
+      porQueNinguemEntende = `
+        Porque, por fora, você até parece “bem”.
+        Você continua fazendo.
+        Continua sorrindo quando dá.
         <br><br>
-        E quando o corpo vive assim, ele começa a tratar a vida como ameaça.
-        Não é drama. É fisiologia.
+        Só que por dentro o corpo não desarma, e aí a mente vira radar.
+        E quando ninguém entende, você começa a achar que está exagerando…
+        <strong>e não está</strong>.
       `;
-      sentidoPlano = `
-        O <strong>Essencial</strong> é pra você reorganizar esse eixo em <strong>3 semanas</strong>, com uma estrutura clara:
-        começo, meio e direção.
+      porQuePlanoAgora = `
+        O <strong>Essencial</strong> é pra quando você ainda está funcional,
+        mas já percebeu que está no limite.
         <br><br>
-        É o plano certo quando você ainda está de pé — mas não quer esperar isso virar colapso.
+        Você recebe a estrutura completa por <strong>3 semanas</strong> (passo a passo, simples),
+        pra o seu corpo parar de “funcionar em alerta”.
+        Sem confusão. Sem teoria infinita.
       `;
       proximoPasso = `
-        Se você quer sair desse “modo alerta” sem se perder:
-        <strong>agende a avaliação</strong>.
-        Em 20 minutos eu confirmo o padrão e te digo com honestidade o que faz sentido no seu caso.
+        Se você quer um caminho firme (e não mais uma tentativa solta):
+        <strong>agende sua avaliação de 20 minutos</strong>.
+        Eu confirmo o padrão com você, ajusto o rumo e te digo, com clareza, o que faz sentido no seu caso.
       `;
-      tomMsg = "Quero começar pelo Essencial e reorganizar meu eixo com direção.";
+      tomMsg = "Quero começar pelo Essencial. Eu sinto que estou no limite e preciso de direção.";
     } else if(score <= 9){
       plano = "Acompanhado";
-      headline = "Seu corpo não está fraco. Ele só cansou de lutar sozinho.";
-      carinho = `
-        Sabe quando você tenta, promete pra você mesma, começa bem…
-        e aí ${ancoras.curto}?
+      titulo = "Você não é fraca. Você só está cansada de recomeçar toda semana.";
+      abertura = `
+        Você tenta. Você começa. Às vezes melhora.
         <br><br>
-        Isso não é falta de vontade.
-        É um sistema interno que não está estabilizado.
+        Aí vem uma noite ruim, um estresse, uma cobrança… e parece que você volta pro mesmo lugar.
+        Isso não é falta de vontade. É um corpo que ainda está preso no alerta.
       `;
-      corpo = `
-        Pelo seu teste, seu HPA está em <strong>${intensidadeTxt}</strong>.
+      oQueIssoSignifica = `
+        Seu HPA está em <strong>alerta ${intensidade}</strong> com oscilação.
+        Você entende na cabeça o que precisa fazer, mas o corpo não sustenta o sinal.
         <br><br>
-        Você entende as coisas na cabeça, mas o corpo não sustenta o sinal.
-        E quando o corpo não sustenta, a constância vira briga diária.
-        <br><br>
-        Resultado: sono quebrado, energia instável, ansiedade aparecendo do nada, ${ancoras.peso}.
+        E aí vira aquele ciclo: começa bem → escorrega → se culpa → tenta de novo.
+        Só que culpa não regula sistema nervoso.
       `;
-      invisivel = `
-        E aí acontece a pior parte: você começa a se culpar.
-        Só que o problema não é caráter, nem “fraqueza”.
+      porQueNinguemEntende = `
+        Porque muita abordagem fica só no “mental”.
+        Mas quando o corpo está em alerta, ele não negocia com frase bonita.
         <br><br>
-        O corpo em alerta não negocia com motivação.
-        Ele precisa de <strong>regulação repetida</strong> até voltar pro lugar.
+        E tem um ponto importante: você não precisa se provar forte o tempo todo.
+        Você precisa de <strong>constância guiada</strong>.
       `;
-      sentidoPlano = `
-        O <strong>Acompanhado</strong> existe exatamente pra isso: você não ficar sozinha no ponto onde normalmente desistiria.
+      porQuePlanoAgora = `
+        O <strong>Acompanhado</strong> (3x por semana) é exatamente pra isso:
+        te manter no trilho quando normalmente você estaria sozinha no ponto em que desistiria.
         <br><br>
-        Com <strong>3 contatos por semana</strong> durante <strong>3 semanas</strong>, a gente corrige rota rápido,
-        fecha brechas e cria estabilidade real.
+        Não é pra te prender. É pra te dar sustentação por <strong>3 semanas</strong>
+        até o corpo parar de puxar você pro padrão antigo.
       `;
       proximoPasso = `
-        Se você quer parar de recomeçar e finalmente sustentar:
-        <strong>agende a avaliação</strong>.
-        Eu vou te mostrar onde o eixo está travando e como destravar por etapas, sem papo complicado.
+        Se você quer parar de viver em “ciclo” e começar um processo de verdade:
+        <strong>agende sua avaliação</strong>.
+        Eu vou te dizer onde o eixo está travando e o que precisa mudar primeiro — sem enrolar.
       `;
-      tomMsg = "Quero o Acompanhado pra ter constância e sair do ciclo de recomeçar.";
+      tomMsg = "Quero o Acompanhado. Eu preciso de constância e correção de rota durante a semana.";
     } else {
       plano = "Intensivo";
-      headline = "Isso não é só cansaço. É sobrevivência. E sobrevivência drena a alma.";
-      carinho = `
-        Vou ser direto com carinho:
-        quando chega nesse nível, você não descansa de verdade.
-        Você “apaga”, mas não recupera.
+      titulo = "Seu corpo está em sobrevivência. E isso cansa até a alma.";
+      abertura = `
+        Isso aqui não é “cansaço comum”.
+        É quando você acorda e já sente peso.
+        Já sente tensão.
+        E a mente já começa correndo antes do dia começar.
         <br><br>
-        E tem dias que o corpo parece que acorda “assustado”,
-        mesmo sem nenhum motivo claro.
+        E o pior: você tenta explicar… e muita gente não entende.
       `;
-      corpo = `
-        Pelo seu teste, seu HPA está em <strong>${intensidadeTxt}</strong>.
+      oQueIssoSignifica = `
+        Seu HPA está em <strong>alerta ${intensidade}</strong>.
+        Pense num alarme que toca por ameaças invisíveis:
+        antecipação, ruminação, medo do futuro, sobrecarga, conflitos.
         <br><br>
-        É como um alarme sensível demais tocando por ameaças invisíveis:
-        pensamento repetitivo, antecipação, trauma, cobrança, sobrecarga.
-        <br><br>
-        A mente tenta controlar tudo porque o corpo não se sente seguro.
-        E aí vem a tensão, a irritação, o medo do futuro… e ${ancoras.culpa}.
+        O corpo produz urgência mesmo quando não existe urgência real.
+        E isso te consome.
       `;
-      invisivel = `
-        Muita gente tenta “resolver ansiedade” só por pensamento ou só por sono.
-        Mas quando o corpo está nesse estado, ele precisa primeiro de uma coisa:
-        <strong>segurança fisiológica</strong>.
+      porQueNinguemEntende = `
+        Porque quando o corpo fica assim por tempo demais,
+        tratar só um pedaço (só sono, só pensamento, só “força de vontade”) vira melhora curta.
         <br><br>
-        Sem isso, qualquer melhora vira frágil e curta.
+        Antes de qualquer coisa, você precisa de <strong>segurança fisiológica</strong>:
+        o corpo aprender que pode baixar a guarda.
       `;
-      sentidoPlano = `
+      porQuePlanoAgora = `
         O <strong>Intensivo</strong> é presença diária (seg–sex) por <strong>3 semanas</strong>.
         <br><br>
-        Não é pra criar dependência.
-        É pra estabilizar o sistema no período crítico, reduzir desistência e acelerar a reorganização.
+        Não é dependência. É sustentação no período em que o corpo mais tenta voltar ao padrão antigo.
+        É o que reduz desistência e dá previsibilidade.
       `;
       proximoPasso = `
-        Se esse texto te acertou, não é coincidência.
-        <strong>Agende a avaliação</strong>.
-        A gente coloca ordem no caos com método, e você volta a sentir chão.
+        Se esse texto te acertou em cheio:
+        <strong>agende a avaliação</strong>.
+        Você merece parar de viver como se todo dia fosse uma guerra.
       `;
-      tomMsg = "Quero o Intensivo porque sinto que meu corpo está em sobrevivência.";
+      tomMsg = "Quero o Intensivo. Eu sinto que meu corpo está em sobrevivência e preciso de presença constante.";
     }
 
-    // Mensagem pronta pro WhatsApp (curta + emocional + objetiva)
     const waText =
 `Olá, Soares. Fiz o teste do HPA RESET®.
 
 Meu score foi ${score}/14 e indicou: ${plano}.
 
-O resultado me descreveu muito. Eu estou vivendo isso de verdade.
+Eu me reconheci muito no resultado (principalmente em: ${verdadeCurta}).
 Quero agendar a avaliação inicial (20 min) para confirmar e começar com direção.
 
 ${tomMsg}`;
 
-    // Render resultado (bem “vendável”, sem parecer vendedor)
     const box = document.getElementById("resultBox");
     box.style.display = "block";
     box.innerHTML = `
-      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:10px;">
-        <div style="font-weight:900;letter-spacing:-.02em;">
-          Indicação: <strong>${plano}</strong>
-        </div>
-        <div style="color:#64748b;font-weight:800;">
-          (score: ${score}/14)
-        </div>
+      <div style="font-weight:900;font-size:1.02rem;letter-spacing:-.02em;margin-bottom:10px;">
+        Seu resultado indica: <strong>${plano}</strong>
       </div>
 
-      <div style="font-weight:900;font-size:1.26rem;letter-spacing:-.03em;margin-bottom:10px;">
-        ${headline}
+      <div style="font-weight:900;font-size:1.22rem;letter-spacing:-.03em;margin-bottom:10px;">
+        ${titulo}
       </div>
 
       <div style="color:#334155">
-        ${carinho}
+        ${abertura}
       </div>
 
       <div style="margin-top:12px;color:#334155">
-        <strong>O que está acontecendo com você (sem enrolar):</strong><br>
-        ${corpo}
+        <strong>O que está acontecendo com você (sem papo complicado):</strong><br>
+        ${oQueIssoSignifica}
       </div>
 
       <div style="margin-top:12px;color:#475569">
-        <strong>Por que parece que ninguém entende:</strong><br>
-        ${invisivel}
+        <strong>Por que parece que ninguém entende (e você começa a duvidar de si):</strong><br>
+        ${porQueNinguemEntende}
       </div>
 
       <div style="margin-top:12px;color:#0f172a">
         <strong>Por que esse plano faz sentido agora:</strong><br>
-        ${sentidoPlano}
+        ${porQuePlanoAgora}
       </div>
 
       <div style="margin-top:12px;color:#0b1220">
-        <strong>Próximo passo (simples):</strong><br>
+        <strong>Próximo passo (simples e direto):</strong><br>
         ${proximoPasso}
       </div>
 
