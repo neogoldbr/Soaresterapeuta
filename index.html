@@ -1,112 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HPA RESET® | Terapeuta Soares · Saúde de Verdade</title>
+  <meta name="description" content="HPA RESET®: reorganização do eixo HPA em 3 semanas. Teste rápido (7 perguntas) indica o nível ideal de acompanhamento." />
+  <meta name="robots" content="index,follow" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f5f7fb;
+      --card:#ffffff;
+      --text:#0b1220;
+      --muted:#4b5563;
+      --muted2:#6b7280;
+      --line:#e6eaf2;
+      --shadow:0 22px 55px rgba(15,23,42,.10);
+      --shadow2:0 14px 35px rgba(15,23,42,.08);
+      --radius:22px;
+      --radiusLg:32px;
+      --accent:#0f172a;
+      --ok:#16a34a;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:Inter,system-ui,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.65;
+    }
+    .wrap{max-width:1080px;margin:0 auto;padding:28px 18px 120px}
+    a{text-decoration:none;color:inherit}
+
+    .topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+    .brand .small{font-size:.7rem;letter-spacing:.25em;color:var(--muted2)}
+    .brand .name{font-weight:900;font-size:1.2rem}
+    .chip{
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:12px 18px;
+      background:#fff;
+      font-weight:800;
+      box-shadow:var(--shadow2);
+    }
+
+    .hero{
+      background:#fff;
+      border-radius:var(--radiusLg);
+      padding:28px;
+      box-shadow:var(--shadow);
+      margin-bottom:18px;
+    }
+    .pill{
+      background:#eef2ff;
+      padding:6px 14px;
+      border-radius:999px;
+      font-size:.7rem;
+      font-weight:900;
+      letter-spacing:.18em;
+      display:inline-block;
+      margin-bottom:10px;
+    }
+    .hero h1{font-size:2.3rem;letter-spacing:-.05em;margin-bottom:10px}
+    .hero p{color:var(--muted)}
+    .btn{
+      display:inline-block;
+      padding:14px 18px;
+      border-radius:999px;
+      font-weight:900;
+      border:1px solid var(--line);
+      background:#fff;
+      box-shadow:var(--shadow2);
+      margin-top:10px;
+    }
+    .btn.primary{
+      background:var(--accent);
+      color:#fff;
+      border:none;
+    }
+
+    .section{
+      background:#fff;
+      padding:26px;
+      border-radius:var(--radiusLg);
+      box-shadow:var(--shadow);
+      margin-top:18px;
+    }
+
+    .quiz .q{
+      border:1px solid var(--line);
+      padding:14px;
+      border-radius:16px;
+      margin-top:12px;
+    }
+    .q-title{font-weight:900;margin-bottom:6px}
+    .opts label{display:block;margin:6px 0;cursor:pointer}
+
+    .result{
+      display:none;
+      background:#f8fafc;
+      border-radius:16px;
+      padding:20px;
+      margin-top:16px;
+      border:1px solid var(--line);
+    }
+
+    .wa-float{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      background:var(--accent);
+      color:#fff;
+      padding:14px 18px;
+      border-radius:999px;
+      font-weight:900;
+      box-shadow:var(--shadow);
+    }
+  </style>
+</head>
+
+<body>
+
 <script>
-  function getVal(name){
-    const el = document.querySelector(`input[name="${name}"]:checked`);
-    return el ? Number(el.value) : null;
+const WHATSAPP = "https://wa.me/5598981653105";
+</script>
+
+<div class="wrap">
+
+  <div class="topbar">
+    <div class="brand">
+      <div class="small">TERAPEUTA SOARES · SAÚDE DE VERDADE</div>
+      <div class="name">HPA RESET®</div>
+    </div>
+    <a class="chip" href="https://www.instagram.com/soares.saudedeverdade" target="_blank">Instagram</a>
+  </div>
+
+  <div class="hero">
+    <div class="pill">PROTOCOLO INTEGRATIVO</div>
+    <h1>Quando o corpo perde o eixo, a vida pesa.</h1>
+    <p>Esse teste ajuda a entender se o seu corpo está preso em modo alerta.</p>
+    <a class="btn primary" href="#teste">Fazer o teste</a>
+  </div>
+
+  <div class="section" id="teste">
+    <h2>Teste rápido (7 perguntas)</h2>
+
+    <div class="quiz">
+      <div class="q"><div class="q-title">1) Seu sono</div>
+        <label><input type="radio" name="q1" value="0"> Bom</label>
+        <label><input type="radio" name="q1" value="1"> Oscilante</label>
+        <label><input type="radio" name="q1" value="2"> Ruim</label>
+      </div>
+
+      <div class="q"><div class="q-title">2) Ansiedade</div>
+        <label><input type="radio" name="q2" value="0"> Controlada</label>
+        <label><input type="radio" name="q2" value="1"> Frequente</label>
+        <label><input type="radio" name="q2" value="2"> Alta</label>
+      </div>
+
+      <div class="q"><div class="q-title">3) Energia ao acordar</div>
+        <label><input type="radio" name="q3" value="0"> Boa</label>
+        <label><input type="radio" name="q3" value="1"> Baixa</label>
+        <label><input type="radio" name="q3" value="2"> Muito baixa</label>
+      </div>
+
+      <div class="q"><div class="q-title">4) Sua mente à noite</div>
+        <label><input type="radio" name="q4" value="0"> Desliga fácil</label>
+        <label><input type="radio" name="q4" value="1"> Demora</label>
+        <label><input type="radio" name="q4" value="2"> Não desliga</label>
+      </div>
+
+      <div class="q"><div class="q-title">5) Tensão no corpo</div>
+        <label><input type="radio" name="q5" value="0"> Relaxado</label>
+        <label><input type="radio" name="q5" value="1"> Frequente</label>
+        <label><input type="radio" name="q5" value="2"> Sempre em alerta</label>
+      </div>
+
+      <div class="q"><div class="q-title">6) Reação emocional</div>
+        <label><input type="radio" name="q6" value="0"> Estável</label>
+        <label><input type="radio" name="q6" value="1"> Oscila</label>
+        <label><input type="radio" name="q6" value="2"> Explode</label>
+      </div>
+
+      <div class="q"><div class="q-title">7) Constância</div>
+        <label><input type="radio" name="q7" value="0"> Sustento</label>
+        <label><input type="radio" name="q7" value="1"> Começo e paro</label>
+        <label><input type="radio" name="q7" value="2"> Não sustento</label>
+      </div>
+
+      <button class="btn primary" onclick="calc()">Ver resultado</button>
+
+      <div class="result" id="resultBox"></div>
+    </div>
+  </div>
+
+</div>
+
+<a class="wa-float" href="https://wa.me/5598981653105" target="_blank">WhatsApp</a>
+
+<script>
+function getVal(name){
+  const el = document.querySelector(`input[name="${name}"]:checked`);
+  return el ? Number(el.value) : null;
+}
+
+function calc(){
+  let score=0;
+  for(let i=1;i<=7;i++){
+    let v=getVal("q"+i);
+    if(v===null){alert("Responda tudo com sinceridade.");return;}
+    score+=v;
   }
 
-  function calc(){
-    let score = 0;
-    for(let i=1;i<=7;i++){
-      const v = getVal("q"+i);
-      if(v === null){
-        alert("Responda todas as perguntas com sinceridade.");
-        return;
-      }
-      score += v;
-    }
+  let plano="", texto="", titulo="";
 
-    let plano = "";
-    let titulo = "";
-    let texto = "";
+  if(score<=4){
+    plano="Essencial";
+    titulo="Você não está mal. Está segurando demais.";
+    texto=`Vou falar com você como um amigo falaria.
+Você ainda dá conta, ainda funciona, ainda aguenta.
+Mas isso está custando caro por dentro.
+Seu corpo não relaxa mais de verdade.
+Esse é o momento certo de corrigir antes que ele cobre a conta.`;
+  } else if(score<=9){
+    plano="Acompanhado";
+    titulo="Você tenta melhorar, mas algo sempre te puxa de volta.";
+    texto=`Você começa bem, cria esperança, e depois tudo volta.
+Isso não é falta de força.
+É um corpo que não consegue se regular sozinho.
+Você não deveria passar por isso sozinho.`;
+  } else {
+    plano="Intensivo";
+    titulo="Seu corpo está em sobrevivência.";
+    texto=`Aqui não é mais cansaço comum.
+É alerta constante.
+Força de vontade não resolve isso.
+Presença diária devolve segurança ao corpo.`;
+  }
 
-    if(score <= 4){
-      plano = "Essencial";
-      titulo = "Você não está quebrado. Mas está segurando mais do que deveria.";
-      texto = `
-        Vou ser direto com você, como um amigo seria.
+  document.getElementById("resultBox").style.display="block";
+  document.getElementById("resultBox").innerHTML=`
+    <h3>${titulo}</h3>
+    <p style="white-space:pre-line">${texto}</p>
+    <a class="btn primary" href="${WHATSAPP}?text=${encodeURIComponent(
+      `Olá, Soares. Fiz o teste e o resultado indicou o plano ${plano}. Quero agendar a avaliação.`
+    )}" target="_blank">Quero falar com você</a>
+  `;
+}
+</script>
 
-        Pelo que você respondeu, o seu corpo ainda está funcionando.
-        Você ainda dá conta.
-        Ainda cumpre o que precisa cumprir.
-
-        Mas isso está acontecendo **à força**.
-
-        Você descansa, mas não sente que recupera de verdade.
-        Você até tenta relaxar, mas o corpo continua tenso.
-        Parece que algo dentro de você nunca desliga completamente.
-
-        Isso não é preguiça.
-        Não é fraqueza.
-        Não é falta de pensamento positivo.
-
-        É um corpo que entrou em modo alerta e ficou tempo demais ali.
-
-        O problema é que, quando ninguém reorganiza isso,
-        o corpo continua aguentando…
-        até o dia em que não aguenta mais.
-
-        O protocolo Essencial existe exatamente para esse ponto:
-        **antes da queda**, quando ainda dá para corrigir o eixo
-        sem sofrimento maior.
-      `;
-    }
-
-    else if(score <= 9){
-      plano = "Acompanhado";
-      titulo = "Você tenta melhorar… mas algo sempre puxa você de volta.";
-      texto = `
-        O que aparece aqui não é falta de esforço.
-        Pelo contrário.
-
-        Você tenta.
-        Começa bem.
-        Sente que agora vai.
-        E de repente… o corpo cai de novo.
-
-        Sono desregula.
-        Ansiedade volta.
-        A cabeça acelera.
-        A paciência acaba.
-
-        Isso cansa mais do que estar mal o tempo todo.
-        Porque cria esperança — e depois frustração.
-
-        A verdade é que o seu corpo não está conseguindo
-        se reorganizar sozinho.
-
-        Não porque você não sabe o que fazer,
-        mas porque **não consegue sustentar**.
-
-        O acompanhamento existe por isso:
-        para você não carregar tudo sozinho,
-        não se perder no meio do caminho,
-        e não precisar recomeçar toda semana.
-      `;
-    }
-
-    else {
-      plano = "Intensivo";
-      titulo = "Seu corpo está em sobrevivência. E ele não consegue sair disso sozinho.";
-      texto = `
-        Aqui eu preciso ser muito honesto com você.
-
-        O que aparece nas suas respostas não é só cansaço.
-        É um corpo que vive em alerta.
-
-        Mesmo quando nada está acontecendo,
-        algo dentro de você continua preparado para o pior.
-
-        Tensão no peito.
-        Aperto no estômago.
-        Mente que não para.
-        Sensação de que não pode falhar.
-
-        Isso não é drama.
-        É um sistema nervoso exausto.
-
-        Nesse ponto, força de vontade não resolve.
-        Esperar melhorar sozinho costuma piorar.
-
-        O acompanhamento diário não é exagero.
-        É o que devolve segurança para o corpo
-        até ele aprender, de novo, a desliga
+</body>
+</html>
