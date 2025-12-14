@@ -27,231 +27,651 @@
       --ok:#16a34a;
     }
     *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
     body{
-      font-family:Inter,system-ui,sans-serif;
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
       background:var(--bg);
       color:var(--text);
       line-height:1.65;
     }
+    a{color:inherit;text-decoration:none}
     .wrap{max-width:1080px;margin:0 auto;padding:28px 18px 120px}
-    a{text-decoration:none;color:inherit}
 
-    .topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
-    .brand .small{font-size:.7rem;letter-spacing:.25em;color:var(--muted2)}
-    .brand .name{font-weight:900;font-size:1.2rem}
-    .chip{
-      border:1px solid var(--line);
-      border-radius:999px;
-      padding:12px 18px;
-      background:#fff;
-      font-weight:800;
-      box-shadow:var(--shadow2);
-    }
-
-    .hero{
-      background:#fff;
-      border-radius:var(--radiusLg);
-      padding:28px;
-      box-shadow:var(--shadow);
+    /* Top */
+    .topbar{
+      display:flex;align-items:center;justify-content:space-between;gap:14px;
       margin-bottom:18px;
     }
-    .pill{
-      background:#eef2ff;
-      padding:6px 14px;
-      border-radius:999px;
-      font-size:.7rem;
-      font-weight:900;
-      letter-spacing:.18em;
-      display:inline-block;
-      margin-bottom:10px;
+    .brand{display:flex;flex-direction:column;gap:6px}
+    .brand .small{
+      font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted2)
     }
-    .hero h1{font-size:2.3rem;letter-spacing:-.05em;margin-bottom:10px}
-    .hero p{color:var(--muted)}
-    .btn{
+    .brand .name{font-weight:900;letter-spacing:-.03em}
+    .top-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .chip{
+      background:#fff;border:1px solid var(--line);border-radius:999px;
+      padding:12px 18px;font-weight:800;box-shadow:var(--shadow2);
+      transition:.2s;
+    }
+    .chip:hover{transform:translateY(-1px)}
+
+    /* Hero card */
+    .hero{
+      background:#fff;border:1px solid var(--line);border-radius:var(--radiusLg);
+      box-shadow:var(--shadow);padding:28px 26px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero:before{
+      content:"";
+      position:absolute;
+      inset:-120px -120px auto auto;
+      width:340px;height:340px;
+      background:radial-gradient(circle at 30% 30%, rgba(99,102,241,.22), transparent 60%);
+      filter:blur(4px);
+      transform:rotate(12deg);
+      pointer-events:none;
+    }
+    .pill{
       display:inline-block;
-      padding:14px 18px;
-      border-radius:999px;
-      font-weight:900;
+      padding:6px 14px;border-radius:999px;
+      background:#eef2ff;color:#1f2a44;
+      font-size:.72rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;
+      margin-bottom:12px;
+    }
+    .hero h1{
+      font-size:2.35rem;letter-spacing:-.055em;line-height:1.15;margin-bottom:12px;
+    }
+    .hero p{color:var(--muted);max-width:920px;margin-bottom:10px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:14px 18px;border-radius:999px;font-weight:900;
       border:1px solid var(--line);
-      background:#fff;
-      box-shadow:var(--shadow2);
-      margin-top:10px;
+      background:#fff;box-shadow:var(--shadow2);
+      transition:.2s;
+      cursor:pointer;
     }
     .btn.primary{
-      background:var(--accent);
-      color:#fff;
-      border:none;
+      background:var(--accent);color:#fff;border-color:transparent;
+      box-shadow:0 20px 45px rgba(15,23,42,.22);
     }
+    .btn:hover{transform:translateY(-1px)}
 
+    /* Section cards */
     .section{
-      background:#fff;
-      padding:26px;
-      border-radius:var(--radiusLg);
-      box-shadow:var(--shadow);
       margin-top:18px;
+      background:#fff;border:1px solid var(--line);border-radius:var(--radiusLg);
+      box-shadow:var(--shadow);padding:26px;
     }
-
-    .quiz .q{
-      border:1px solid var(--line);
-      padding:14px;
-      border-radius:16px;
+    .section h2{font-size:1.55rem;letter-spacing:-.04em;margin-bottom:10px}
+    .section p{color:var(--muted);margin-bottom:10px}
+    .checklist{list-style:none;margin-top:8px}
+    .checklist li{
+      position:relative;padding-left:22px;margin:8px 0;color:var(--muted);
+    }
+    .checklist li:before{
+      content:"✓";position:absolute;left:0;top:0;color:var(--ok);font-weight:900;
+    }
+    .callout{
       margin-top:12px;
+      background:#f7f9fe;border:1px solid var(--line);border-radius:18px;
+      padding:14px 14px;color:#374151;
     }
-    .q-title{font-weight:900;margin-bottom:6px}
-    .opts label{display:block;margin:6px 0;cursor:pointer}
+    .callout strong{color:#0b1220}
 
-    .result{
-      display:none;
-      background:#f8fafc;
-      border-radius:16px;
-      padding:20px;
-      margin-top:16px;
+    /* Plans */
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px}
+    .plan{
+      border:1px solid var(--line);border-radius:18px;padding:16px;
+      background:#fff;box-shadow:var(--shadow2);
+      transition:.2s;
+    }
+    .plan:hover{transform:translateY(-1px)}
+    .plan h3{font-size:1rem;letter-spacing:-.02em;margin-bottom:8px}
+    .plan .muted{color:var(--muted);margin-bottom:8px}
+    .plan ul{list-style:none}
+    .plan li{position:relative;padding-left:22px;margin:7px 0;color:var(--muted)}
+    .plan li:before{content:"✓";position:absolute;left:0;top:0;color:var(--ok);font-weight:900}
+
+    /* Quiz */
+    .quiz{
+      margin-top:10px;
       border:1px solid var(--line);
+      border-radius:18px;
+      padding:14px;
+      background:#fff;
+      box-shadow:var(--shadow2);
+    }
+    .q{
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px;
+      margin:12px 0;
+      background:#fff;
+    }
+    .q-title{font-weight:900;margin-bottom:10px;letter-spacing:-.01em}
+    .opts{display:grid;gap:8px}
+    label.opt{display:flex;gap:10px;align-items:flex-start;color:#374151;cursor:pointer}
+    label.opt input{margin-top:3px}
+    .result{
+      margin-top:12px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px;
+      background:#f8fafc;
+      display:none;
+    }
+    .result strong{color:#0b1220}
+    .smallnote{color:var(--muted2);font-size:.92rem;margin-top:10px}
+
+    /* Footer */
+    footer{
+      margin-top:14px;
+      text-align:center;
+      color:var(--muted2);
+      font-size:.92rem;
+    }
+    footer .links{display:flex;gap:16px;justify-content:center;margin-top:10px;flex-wrap:wrap}
+    footer .links a{color:#334155;text-decoration:underline;text-underline-offset:3px}
+
+    /* Floating WhatsApp */
+    .wa-float{
+      position:fixed;right:18px;bottom:18px;
+      background:var(--accent);color:#fff;
+      border-radius:999px;padding:14px 18px;
+      font-weight:900;box-shadow:0 22px 50px rgba(15,23,42,.28);
+      transition:.2s;
+      z-index:99;
+    }
+    .wa-float:hover{transform:translateY(-1px)}
+
+    /* Micro animations (Apple-ish) */
+    .fade-in{
+      opacity:0;
+      transform:translateY(8px);
+      animation:fadeInUp .65s ease forwards;
+    }
+    .delay-1{animation-delay:.05s}
+    .delay-2{animation-delay:.12s}
+    .delay-3{animation-delay:.18s}
+    @keyframes fadeInUp{
+      to{opacity:1;transform:translateY(0)}
     }
 
-    .wa-float{
-      position:fixed;
-      right:18px;
-      bottom:18px;
-      background:var(--accent);
-      color:#fff;
-      padding:14px 18px;
-      border-radius:999px;
-      font-weight:900;
-      box-shadow:var(--shadow);
+    /* Responsive */
+    @media(max-width:980px){
+      .grid3{grid-template-columns:1fr}
+      .hero h1{font-size:2.0rem}
     }
   </style>
 </head>
 
 <body>
-
 <script>
-const WHATSAPP = "https://wa.me/5598981653105";
+  const WHATSAPP = "https://wa.me/5598981653105";
+  const INSTAGRAM = "https://www.instagram.com/soares.saudedeverdade";
 </script>
 
 <div class="wrap">
 
-  <div class="topbar">
+  <!-- TOP -->
+  <div class="topbar fade-in delay-1">
     <div class="brand">
       <div class="small">TERAPEUTA SOARES · SAÚDE DE VERDADE</div>
       <div class="name">HPA RESET®</div>
     </div>
-    <a class="chip" href="https://www.instagram.com/soares.saudedeverdade" target="_blank">Instagram</a>
-  </div>
-
-  <div class="hero">
-    <div class="pill">PROTOCOLO INTEGRATIVO</div>
-    <h1>Quando o corpo perde o eixo, a vida pesa.</h1>
-    <p>Esse teste ajuda a entender se o seu corpo está preso em modo alerta.</p>
-    <a class="btn primary" href="#teste">Fazer o teste</a>
-  </div>
-
-  <div class="section" id="teste">
-    <h2>Teste rápido (7 perguntas)</h2>
-
-    <div class="quiz">
-      <div class="q"><div class="q-title">1) Seu sono</div>
-        <label><input type="radio" name="q1" value="0"> Bom</label>
-        <label><input type="radio" name="q1" value="1"> Oscilante</label>
-        <label><input type="radio" name="q1" value="2"> Ruim</label>
-      </div>
-
-      <div class="q"><div class="q-title">2) Ansiedade</div>
-        <label><input type="radio" name="q2" value="0"> Controlada</label>
-        <label><input type="radio" name="q2" value="1"> Frequente</label>
-        <label><input type="radio" name="q2" value="2"> Alta</label>
-      </div>
-
-      <div class="q"><div class="q-title">3) Energia ao acordar</div>
-        <label><input type="radio" name="q3" value="0"> Boa</label>
-        <label><input type="radio" name="q3" value="1"> Baixa</label>
-        <label><input type="radio" name="q3" value="2"> Muito baixa</label>
-      </div>
-
-      <div class="q"><div class="q-title">4) Sua mente à noite</div>
-        <label><input type="radio" name="q4" value="0"> Desliga fácil</label>
-        <label><input type="radio" name="q4" value="1"> Demora</label>
-        <label><input type="radio" name="q4" value="2"> Não desliga</label>
-      </div>
-
-      <div class="q"><div class="q-title">5) Tensão no corpo</div>
-        <label><input type="radio" name="q5" value="0"> Relaxado</label>
-        <label><input type="radio" name="q5" value="1"> Frequente</label>
-        <label><input type="radio" name="q5" value="2"> Sempre em alerta</label>
-      </div>
-
-      <div class="q"><div class="q-title">6) Reação emocional</div>
-        <label><input type="radio" name="q6" value="0"> Estável</label>
-        <label><input type="radio" name="q6" value="1"> Oscila</label>
-        <label><input type="radio" name="q6" value="2"> Explode</label>
-      </div>
-
-      <div class="q"><div class="q-title">7) Constância</div>
-        <label><input type="radio" name="q7" value="0"> Sustento</label>
-        <label><input type="radio" name="q7" value="1"> Começo e paro</label>
-        <label><input type="radio" name="q7" value="2"> Não sustento</label>
-      </div>
-
-      <button class="btn primary" onclick="calc()">Ver resultado</button>
-
-      <div class="result" id="resultBox"></div>
+    <div class="top-actions">
+      <a class="chip" id="igBtn" target="_blank" rel="noopener">Instagram</a>
+      <a class="chip" id="waBtn" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
 
+  <!-- HERO -->
+  <div class="hero fade-in delay-2" id="topo">
+    <div class="pill">PROTOCOLO INTEGRATIVO</div>
+    <h1>Quando o corpo perde o eixo, a vida pesa.</h1>
+    <p>
+      O <strong>HPA RESET®</strong> foi criado para pessoas exaustas que já tentaram “aguentar firme”
+      e perceberam que força de vontade não resolve desorganização do eixo do estresse.
+    </p>
+    <p>
+      Aqui não tem milagre. Tem método, clareza e acompanhamento no nível certo.
+      O foco é <strong>3 semanas</strong> de reorganização com direção.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn primary" href="#teste">Fazer o teste rápido</a>
+      <a class="btn" href="#como">Ver como funciona</a>
+      <a class="btn" id="talkBtn" target="_blank" rel="noopener">Falar no WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- Isso não é fraqueza -->
+  <div class="section fade-in delay-2">
+    <h2>Isso não é fraqueza</h2>
+    <p>
+      Sono leve, mente acelerada, irritabilidade e cansaço constante são sinais de um sistema que ficou tempo demais
+      em modo alerta.
+    </p>
+    <ul class="checklist">
+      <li>Ansiedade recorrente</li>
+      <li>Dificuldade para desligar a mente</li>
+      <li>Cansaço mesmo após dormir</li>
+      <li>Sensação de estar sempre no limite</li>
+    </ul>
+  </div>
+
+  <!-- O que é -->
+  <div class="section fade-in delay-3" id="como">
+    <h2>O que é o HPA RESET®</h2>
+    <p>
+      Um processo integrativo de reorganização do eixo do estresse, com início, meio e condução clara.
+      Você recebe o protocolo e a estrutura de execução — sem confusão e sem promessas irresponsáveis.
+    </p>
+    <ul class="checklist">
+      <li>Avaliação inicial de 20 minutos</li>
+      <li>Protocolo completo de 3 semanas</li>
+      <li>Orientações práticas e executáveis</li>
+      <li>Acompanhamento conforme necessidade</li>
+    </ul>
+  </div>
+
+  <!-- Eixo HPA explicação profunda -->
+  <div class="section fade-in delay-3" id="hpa">
+    <h2>O eixo HPA: o que é, como funciona e por que dá problema</h2>
+
+    <p>
+      O eixo <strong>HPA</strong> (Hipotálamo–Hipófise–Adrenal) é o seu <strong>circuito de sobrevivência</strong>.
+      Ele regula a resposta ao estresse e determina quando seu corpo precisa acelerar e quando pode recuperar.
+    </p>
+
+    <div class="callout">
+      <strong>Como funciona (em 15 segundos):</strong><br>
+      <strong>Hipotálamo</strong> percebe ameaça → <strong>Hipófise</strong> amplifica o sinal →
+      <strong>Adrenais</strong> liberam mensageiros (ex.: cortisol/adrenalina) para você “dar conta”.
+    </div>
+
+    <p>
+      O problema é que o corpo foi projetado para estresse <strong>pontual</strong>, não para estresse <strong>crônico</strong>.
+      Quando a vida vira tensão + cobrança + noites ruins + antecipação constante, o eixo perde a habilidade de “desligar”.
+    </p>
+
+    <div class="callout">
+      <strong>Metáfora científica (alarme):</strong><br>
+      Imagine um alarme inteligente. Ele toca quando há perigo e depois silencia.
+      No desequilíbrio do HPA, o alarme começa a tocar por “ameaças invisíveis”:
+      pensamentos repetitivos, medo do futuro, trauma, sobrecarga emocional, conflitos.
+      Resultado: você vive em alerta mesmo quando está em casa.
+    </div>
+
+    <div class="callout">
+      <strong>Metáfora do termostato:</strong><br>
+      O HPA deveria subir e descer como um termostato.
+      Se ele trava alto, você até funciona — mas paga com sono leve, irritabilidade, tensão corporal e exaustão.
+    </div>
+
+    <h3 style="font-size:1.05rem;letter-spacing:-.02em;margin-top:10px;margin-bottom:8px;">
+      Por que tanta gente não resolve ansiedade nos caminhos convencionais?
+    </h3>
+    <p>
+      Sem atacar a psiquiatria (que é importante e salva vidas): o ponto é que muita gente trata a “ansiedade”
+      como se fosse só pensamento — e esquece que, em muitos casos, existe um <strong>sistema fisiológico em alerta</strong>
+      sustentando o sintoma.
+    </p>
+    <ul class="checklist">
+      <li><strong>Ritmo biológico</strong>: sono, luz, horários, recuperação</li>
+      <li><strong>Estado corporal</strong>: respiração, tensão, hipervigilância, gatilhos</li>
+      <li><strong>Execução guiada</strong>: a pessoa até entende, mas não sustenta sozinha no dia a dia</li>
+    </ul>
+    <p>
+      O HPA RESET® é um processo de 3 semanas para reduzir ruído, criar previsibilidade e reorganizar o eixo
+      com acompanhamento proporcional ao nível do seu quadro.
+    </p>
+
+    <p class="smallnote">
+      *Não substitui avaliação médica. Se você usa medicações ou está em crise intensa, o caminho seguro é integrar com seu médico.
+    </p>
+  </div>
+
+  <!-- Planos -->
+  <div class="section fade-in delay-3" id="planos">
+    <h2>Níveis de acompanhamento</h2>
+    <div class="grid3">
+      <div class="plan">
+        <h3>Essencial</h3>
+        <div class="muted">Avaliação inicial + protocolo completo.</div>
+        <ul>
+          <li>Avaliação inicial (20 min)</li>
+          <li>3 semanas de protocolo (estrutura completa)</li>
+          <li>Execução simples, sem confusão</li>
+          <li>Para quem está funcional, mas no limite</li>
+        </ul>
+      </div>
+
+      <div class="plan">
+        <h3>Acompanhado</h3>
+        <div class="muted">Tudo do Essencial + acompanhamento 3x por semana.</div>
+        <ul>
+          <li>Correções de rota ao longo da semana</li>
+          <li>Mais consistência e menos desistência</li>
+          <li>Para quem oscila e não sustenta sozinho</li>
+          <li>Orientação aplicada, não só teoria</li>
+        </ul>
+      </div>
+
+      <div class="plan">
+        <h3>Intensivo</h3>
+        <div class="muted">Acompanhamento diário (seg–sex) por 3 semanas.</div>
+        <ul>
+          <li>Presença terapêutica diária</li>
+          <li>Correção constante do que derruba</li>
+          <li>Para alerta crônico e exaustão alta</li>
+          <li>Mais segurança para sair do “modo sobrevivência”</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Teste -->
+  <div class="section fade-in delay-3" id="teste">
+    <h2>Teste rápido (7 perguntas)</h2>
+
+    <div class="quiz">
+
+      <div class="q">
+        <div class="q-title">1) Seu sono:</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q1" value="0"> Bom</label>
+          <label class="opt"><input type="radio" name="q1" value="1"> Oscilante</label>
+          <label class="opt"><input type="radio" name="q1" value="2"> Ruim</label>
+        </div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">2) Ansiedade:</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q2" value="0"> Controlada</label>
+          <label class="opt"><input type="radio" name="q2" value="1"> Frequente</label>
+          <label class="opt"><input type="radio" name="q2" value="2"> Alta</label>
+        </div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">3) Energia ao acordar:</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q3" value="0"> Boa</label>
+          <label class="opt"><input type="radio" name="q3" value="1"> Baixa</label>
+          <label class="opt"><input type="radio" name="q3" value="2"> Muito baixa</label>
+        </div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">4) Sua mente à noite:</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q4" value="0"> Desliga com facilidade</label>
+          <label class="opt"><input type="radio" name="q4" value="1"> Demora para desligar</label>
+          <label class="opt"><input type="radio" name="q4" value="2"> Não desliga (ruminação)</label>
+        </div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">5) Seu corpo (tensão/alerta):</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q5" value="0"> Relaxado na maior parte do tempo</label>
+          <label class="opt"><input type="radio" name="q5" value="1"> Tenso com frequência</label>
+          <label class="opt"><input type="radio" name="q5" value="2"> Sempre em alerta (peito/estômago/mandíbula)</label>
+        </div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">6) Reação emocional:</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q6" value="0"> Estável</label>
+          <label class="opt"><input type="radio" name="q6" value="1"> Oscilante</label>
+          <label class="opt"><input type="radio" name="q6" value="2"> Explode fácil e depois vem culpa</label>
+        </div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">7) Rotina e constância:</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q7" value="0"> Consigo sustentar</label>
+          <label class="opt"><input type="radio" name="q7" value="1"> Começo e paro</label>
+          <label class="opt"><input type="radio" name="q7" value="2"> Não sustento (corpo “desliga”)</label>
+        </div>
+      </div>
+
+      <button class="btn primary" type="button" onclick="calc()">Ver resultado</button>
+
+      <div class="result" id="resultBox"></div>
+
+      <div class="smallnote">
+        *Este teste é um filtro funcional (não é diagnóstico). Em crise intensa ou uso/ajuste de medicação, integre com seu médico.
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="fade-in delay-3">
+    Terapeuta Soares · HPA RESET®
+    <div class="links">
+      <a id="waFoot" target="_blank" rel="noopener">WhatsApp</a>
+      <a id="igFoot" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </footer>
+
 </div>
 
-<a class="wa-float" href="https://wa.me/5598981653105" target="_blank">WhatsApp</a>
+<a class="wa-float" id="waFloat" target="_blank" rel="noopener">WhatsApp</a>
 
 <script>
-function getVal(name){
-  const el = document.querySelector(`input[name="${name}"]:checked`);
-  return el ? Number(el.value) : null;
-}
+  // Links
+  document.getElementById("igBtn").href = INSTAGRAM;
+  document.getElementById("igFoot").href = INSTAGRAM;
 
-function calc(){
-  let score=0;
-  for(let i=1;i<=7;i++){
-    let v=getVal("q"+i);
-    if(v===null){alert("Responda tudo com sinceridade.");return;}
-    score+=v;
+  document.getElementById("waBtn").href = WHATSAPP;
+  document.getElementById("talkBtn").href = WHATSAPP;
+  document.getElementById("waFoot").href = WHATSAPP;
+  document.getElementById("waFloat").href = WHATSAPP;
+
+  // Quiz helper
+  function getVal(name){
+    const el = document.querySelector(`input[name="${name}"]:checked`);
+    return el ? Number(el.value) : null;
   }
 
-  let plano="", texto="", titulo="";
+  // ✅ Resultado emocional forte (mantendo ética: sem promessa de cura, sem atacar psiquiatria)
+  function calc(){
+    let score = 0;
+    for(let i=1;i<=7;i++){
+      const v = getVal("q"+i);
+      if(v === null){
+        alert("Responda as 7 perguntas para ver o resultado.");
+        return;
+      }
+      score += v; // 0..14
+    }
 
-  if(score<=4){
-    plano="Essencial";
-    titulo="Você não está mal. Está segurando demais.";
-    texto=`Vou falar com você como um amigo falaria.
-Você ainda dá conta, ainda funciona, ainda aguenta.
-Mas isso está custando caro por dentro.
-Seu corpo não relaxa mais de verdade.
-Esse é o momento certo de corrigir antes que ele cobre a conta.`;
-  } else if(score<=9){
-    plano="Acompanhado";
-    titulo="Você tenta melhorar, mas algo sempre te puxa de volta.";
-    texto=`Você começa bem, cria esperança, e depois tudo volta.
-Isso não é falta de força.
-É um corpo que não consegue se regular sozinho.
-Você não deveria passar por isso sozinho.`;
-  } else {
-    plano="Intensivo";
-    titulo="Seu corpo está em sobrevivência.";
-    texto=`Aqui não é mais cansaço comum.
-É alerta constante.
-Força de vontade não resolve isso.
-Presença diária devolve segurança ao corpo.`;
+    let plano = "";
+    let titulo = "";
+    let espelho = "";
+    let oQueAcontece = "";
+    let porQueNinguemPega = "";
+    let porQueEssePlano = "";
+    let convite = "";
+    let tomMsg = "";
+
+    const intensidade = score <= 4 ? "leve/moderada" : (score <= 9 ? "moderada/alta" : "alta");
+    const tempo = "3 semanas";
+
+    if(score <= 4){
+      plano = "Essencial";
+      titulo = "Você não está quebrada. Você só está cansada de aguentar tudo sozinha.";
+      espelho = `
+        Vou falar do jeito que eu falaria com uma amiga:
+        <strong>você funciona</strong>. Você dá conta. Você segura a onda.
+        <br><br>
+        Mas tem um detalhe que quase ninguém vê:
+        você até descansa… só que não sente que <strong>recupera</strong>.
+        A mente fica ligada, como se tivesse sempre algo pra vigiar.
+      `;
+      oQueAcontece = `
+        Pelas suas respostas, seu eixo do estresse (HPA) está em <strong>alerta ${intensidade}</strong>.
+        <br><br>
+        É como dirigir com o pé levemente no acelerador o dia inteiro.
+        Você vai indo… mas tudo pesa: sono mais frágil, irritação fácil, energia curta e aquela sensação de “eu não era assim”.
+      `;
+      porQueNinguemPega = `
+        Porque por fora você parece “bem”.
+        Você não está caída na cama o dia todo.
+        <br><br>
+        Só que por dentro o seu corpo não desarma.
+        E quando o corpo não desarma, a mente vira radar: pensa demais, prevê problema, não relaxa.
+      `;
+      porQueEssePlano = `
+        O <strong>Essencial</strong> é pra reorganizar isso com direção, sem confusão.
+        Você recebe a estrutura completa por ${tempo}, com começo, meio e execução simples.
+        <br><br>
+        É o passo certo quando você ainda está “funcionando”, mas já percebeu que está no limite.
+      `;
+      convite = `
+        Se você quer clareza e um caminho firme: <strong>agende a avaliação</strong>.
+        Em 20 minutos eu confirmo o padrão, ajusto o rumo e te digo o que faz sentido no seu caso — sem enrolar.
+      `;
+      tomMsg = "Quero começar pelo Essencial e reorganizar meu eixo com clareza.";
+    } else if(score <= 9){
+      plano = "Acompanhado";
+      titulo = "Você não é fraca. Você só está cansada de recomeçar toda semana.";
+      espelho = `
+        Você tenta. Você começa. Você até melhora.
+        <br><br>
+        Aí vem uma noite ruim, um estresse, uma cobrança…
+        e parece que o corpo puxa você de volta pro mesmo lugar.
+        <br><br>
+        Isso não é falta de vontade. É um sistema interno que ainda está em alerta.
+      `;
+      oQueAcontece = `
+        Seu HPA está em <strong>alerta ${intensidade}</strong> com oscilação.
+        <br><br>
+        Você entende as coisas na cabeça, mas o corpo não sustenta o sinal.
+        E quando o corpo não sustenta, a constância vira uma guerra.
+      `;
+      porQueNinguemPega = `
+        Muita gente tenta resolver só com “mente”.
+        Só que quando o corpo está em alerta, ele não negocia com frase bonita.
+        <br><br>
+        Sem correção de rota, o sistema volta pro padrão antigo e você se culpa — sem merecer.
+      `;
+      porQueEssePlano = `
+        O <strong>Acompanhado</strong> existe pra evitar recaídas silenciosas.
+        <br><br>
+        Com 3 contatos por semana, você não fica sozinha exatamente no ponto onde normalmente desistiria.
+        Isso cria consistência real por ${tempo}.
+      `;
+      convite = `
+        Se você quer parar de viver em ciclo e começar um processo sustentado:
+        <strong>agende a avaliação</strong>. Eu vou te dizer com clareza onde o eixo está travando e como destravar por etapas.
+      `;
+      tomMsg = "Quero o Acompanhado para ter constância e sair do ciclo de recomeçar.";
+    } else {
+      plano = "Intensivo";
+      titulo = "Seu corpo está em modo sobrevivência. E isso cansa até a alma.";
+      espelho = `
+        Isso aqui não é “cansaço comum”.
+        É quando você acorda já pesada, já tensa,
+        e a mente já começa correndo antes do dia começar.
+        <br><br>
+        E o pior: você tenta explicar… e as pessoas acham que é exagero.
+      `;
+      oQueAcontece = `
+        Seu HPA está em <strong>alerta ${intensidade}</strong>.
+        <br><br>
+        Imagine um alarme que toca por ameaças invisíveis:
+        pensamento repetitivo, antecipação, trauma, cobrança, sobrecarga.
+        O corpo produz urgência mesmo quando não há urgência real.
+      `;
+      porQueNinguemPega = `
+        Tem gente que trata só o sintoma: uma parte da mente ou uma parte do sono.
+        <br><br>
+        Mas quando o corpo vive em alerta, ele precisa primeiro de uma coisa:
+        <strong>segurança fisiológica</strong>.
+        Sem isso, qualquer melhora vira curta e frágil.
+      `;
+      porQueEssePlano = `
+        O <strong>Intensivo</strong> é presença diária (seg–sex) por ${tempo}.
+        <br><br>
+        Não é pra criar dependência.
+        É pra criar estabilidade justamente no período em que o corpo mais tenta voltar ao padrão antigo.
+        Esse nível de presença reduz desistência e acelera reorganização.
+      `;
+      convite = `
+        Se isso te descreveu de verdade: <strong>não adie</strong>.
+        Agende a avaliação. Você merece parar de viver como se todo dia fosse uma guerra.
+      `;
+      tomMsg = "Quero o Intensivo porque sinto que meu corpo está em sobrevivência.";
+    }
+
+    const waText =
+`Olá, Soares. Fiz o teste do HPA RESET®.
+
+Meu score foi ${score}/14 e indicou: ${plano}.
+
+O resultado descreveu exatamente o que eu estou vivendo.
+Quero agendar a avaliação inicial (20 min) para confirmar e começar com direção.
+
+${tomMsg}`;
+
+    const box = document.getElementById("resultBox");
+    box.style.display = "block";
+    box.innerHTML = `
+      <div style="font-weight:900;font-size:1.02rem;letter-spacing:-.02em;margin-bottom:10px;">
+        Indicação: <strong>${plano}</strong>
+      </div>
+
+      <div style="font-weight:900;font-size:1.22rem;letter-spacing:-.03em;margin-bottom:10px;">
+        ${titulo}
+      </div>
+
+      <div style="color:#334155">
+        ${espelho}
+      </div>
+
+      <div style="margin-top:12px;color:#334155">
+        <strong>O que está acontecendo com você (sem papo complicado):</strong><br>
+        ${oQueAcontece}
+      </div>
+
+      <div style="margin-top:12px;color:#475569">
+        <strong>Por que parece que ninguém entende (e você começa a duvidar de si):</strong><br>
+        ${porQueNinguemPega}
+      </div>
+
+      <div style="margin-top:12px;color:#0f172a">
+        <strong>Por que esse plano faz sentido agora:</strong><br>
+        ${porQueEssePlano}
+      </div>
+
+      <div style="margin-top:12px;color:#0b1220">
+        <strong>Próximo passo (simples e direto):</strong><br>
+        ${convite}
+      </div>
+
+      <div style="margin-top:16px;">
+        <a class="btn primary"
+           href="${WHATSAPP}?text=${encodeURIComponent(waText)}"
+           target="_blank" rel="noopener">
+          Quero agendar minha avaliação
+        </a>
+      </div>
+
+      <div style="margin-top:10px;color:#6b7280;font-size:.92rem;">
+        *Este teste é um filtro funcional (não é diagnóstico). Se você usa medicação ou está em crise intensa, integre com seu médico.
+      </div>
+    `;
+
+    box.scrollIntoView({behavior:"smooth", block:"start"});
   }
-
-  document.getElementById("resultBox").style.display="block";
-  document.getElementById("resultBox").innerHTML=`
-    <h3>${titulo}</h3>
-    <p style="white-space:pre-line">${texto}</p>
-    <a class="btn primary" href="${WHATSAPP}?text=${encodeURIComponent(
-      `Olá, Soares. Fiz o teste e o resultado indicou o plano ${plano}. Quero agendar a avaliação.`
-    )}" target="_blank">Quero falar com você</a>
-  `;
-}
 </script>
-
 </body>
 </html>
